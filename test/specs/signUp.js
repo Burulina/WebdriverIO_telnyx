@@ -31,7 +31,6 @@ describe('Check sign up', () => {
     it('TC3 - Should check ability to open sign up page after clicking "Try for free" with invalid email', async function() {
         await homePage.fillEmailInput(data.invalidEmail);
         await homePage.clickTryForFreeButton();
-        await browser.saveScreenshot('./test/screenshots/errorEmail.png');
         await expect(browser).toHaveUrl('https://telnyx.com/');
     });
 
