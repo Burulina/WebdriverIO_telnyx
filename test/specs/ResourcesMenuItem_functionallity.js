@@ -24,7 +24,7 @@ describe('Check ResourcesMenuItem functionallity', () => {
         await expect(blogPage.getSearchResultHeading()).toHaveTextContaining(data.search);
     });
 
-    it('TC16 - Should check ability to filter news by content on the "Blog" page', async function() {
+    it.skip('TC16 - Should check ability to filter news by content on the "Blog" page', async function() {
         await homePage.clickBlogSubmenuItem();
         await expect(browser).toHaveUrlContaining('/resources');
         await expect(blogPage.getBlogPageHeading()).toBeDisplayed();
