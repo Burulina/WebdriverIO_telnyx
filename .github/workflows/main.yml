@@ -19,8 +19,8 @@ jobs:
            
       - name: run tests on Google Chrome
         run: npm run allTestsChromeHeadless
-      # - name: run tests on Firefox
-      #   run: npm run allTestsFirefoxHeadless
+      - name: run tests on Firefox
+        run: npm run allTestsFirefoxHeadless
 
       
       - name: Upload directory with test results
