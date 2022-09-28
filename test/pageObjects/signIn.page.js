@@ -22,6 +22,10 @@ class SignInPage {
         return $(loginErrorMessage);
     }
 
+    getLoginButton () {
+        return $(loginButton);
+    }
+
     async fillLoginInput (email, password) {
         await commonMethods.typeInput(businessEmailInput, email);
         await commonMethods.typeInput(passwordInput, password);

@@ -28,7 +28,7 @@ describe('Check sign up', () => {
         await expect(signUpPage.getWorkEmailInput()).toHaveValue(data.email);
     });
 
-    it.skip('TC3 - Should check ability to open sign up page after clicking "Try for free" with invalid email', async function() {
+    it('TC3 - Should check ability to open sign up page after clicking "Try for free" with invalid email', async function() {
         await homePage.fillEmailInput(data.invalidEmail);
         await homePage.clickTryForFreeButton();
         await browser.saveScreenshot('./test/screenshots/errorEmail.png');

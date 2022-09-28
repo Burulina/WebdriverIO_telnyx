@@ -16,6 +16,7 @@ describe('Check sign in', () => {
       
     it('TC5 - Should check ability to Log In with not exist credentials after redirection from home page header', async function() {
         await signInPage.fillLoginInput(data.email, data.password);
+        await signInPage.getLoginButton().waitForEnabled();
         await signInPage.clickLoginButton();
         await expect(signInPage.getLoginErrorMessage()).toBeDisplayed();
         await expect(signInPage.getLoginErrorMessage()).toHaveTextContaining('That email and password combination is not valid, or your browser could not be authenticated via recaptcha. Please try again.');

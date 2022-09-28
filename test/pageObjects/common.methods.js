@@ -18,9 +18,9 @@ class CommonMethods {
         await browser.waitUntil(
             async () => (await $(elem).isDisplayed()) === true,
             {
-                timeout: 3000,
+                timeout: 4000,
                 interval: 500,
-                timeoutMsg: 'Expected button is not displayed after 3 s'
+                timeoutMsg: 'Expected button is not displayed after 4 s'
             }
         );
         await $(elem).click();

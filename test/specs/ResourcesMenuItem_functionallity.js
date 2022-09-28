@@ -24,14 +24,14 @@ describe('Check ResourcesMenuItem functionallity', () => {
         await expect(blogPage.getSearchResultHeading()).toHaveTextContaining(data.search);
     });
 
-    it.skip('TC16 - Should check ability to filter news by content on the "Blog" page', async function() {
+    it('TC16 - Should check ability to filter news by content on the "Blog" page', async function() {
         await homePage.clickBlogSubmenuItem();
         await expect(browser).toHaveUrlContaining('/resources');
         await expect(blogPage.getBlogPageHeading()).toBeDisplayed();
         await expect(blogPage.getBlogPageHeading()).toHaveTextContaining('Blog');
         await blogPage.clickNewProdFeaturesButton();
         await expect (blogPage.getNewProdFeaturesButton()).toHaveAttribute('aria-checked', 'true');
-        await blogPage.checkFilterContent('New Products & Features');
+        await expect(browser).toHaveUrlContaining('Features');
     });
     
     it('TC19 - Should check ability to filter Developer docs by category', async function() {

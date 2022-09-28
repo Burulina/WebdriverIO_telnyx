@@ -33,14 +33,6 @@ class BlogPage {
         const searchArray = await this.getSearchMainTopics().map(elem => elem.getText());
         console.log ("SearchMainTopics: " + searchArray);
     }
-
-    async checkFilterContent (data) {
-        await $$(newsArticlesTopics).map(async elem => {
-            let Text = await elem.getText();
-            console.log(Text)
-            await expect(Text).toContain(data);
-        });
-    }
  
 }
 
