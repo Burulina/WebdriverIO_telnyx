@@ -1,4 +1,4 @@
-name: WebdriverIO Telnyx Tests
+name: WebdriverIO Telnyx Test project
 
 on:
   push:
