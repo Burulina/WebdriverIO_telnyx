@@ -3,7 +3,7 @@ const homePage = require ('../pageObjects/home.page');
 const prodStoragePage = require ('../pageObjects/prod.storage.page');
 const data = require('./../../data/data.js');
 
-describe('Check join waitlist', () => {
+describe('Check join waitlist', function() {
     before(async function() {
         await browser.url('/');
         await commonMethods.closeCookiesForm();

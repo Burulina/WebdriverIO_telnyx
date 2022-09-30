@@ -3,7 +3,7 @@ const homePage = require ('../pageObjects/home.page');
 const signInPage = require ('../pageObjects/signIn.page');
 const data = require('./../../data/data.js');
 
-describe('Check sign in', () => {
+describe('Check sign in', function() {
     beforeEach(async function() {
         await browser.url('/');
         await commonMethods.closeCookiesForm();

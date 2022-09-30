@@ -16,8 +16,8 @@ jobs:
           node-version: '16.15.0'
       - name: Install dependencies
         run: npm ci
-      # - name: run tests on Google Chrome
-      #   run: npm run allTestsChromeHeadless
+      - name: run tests on Google Chrome
+        run: npm run allTestsChromeHeadless
       - name: run tests on Firefox
         run: npm run allTestsFirefoxHeadless
       - name: Upload directory with test results

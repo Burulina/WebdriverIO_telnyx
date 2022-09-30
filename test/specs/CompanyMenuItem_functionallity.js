@@ -4,7 +4,7 @@ const integrationsPage = require ('../pageObjects/integrations.page');
 const data = require('./../../data/data.js');
 
 
-describe('Check CompanyMenuItem functionallity', () => {
+describe('Check CompanyMenuItem functionallity', function() {
     beforeEach(async function() {
         await browser.url('/');
         await commonMethods.closeCookiesForm();

@@ -3,7 +3,7 @@ const homePage = require ('../pageObjects/home.page');
 const signUpPage = require ('../pageObjects/signUp.page');
 const data = require('./../../data/data.js');
 
-describe('Check sign up', () => {
+describe('Check sign up', function() {
     beforeEach(async function() {
         await browser.url('/');
         await commonMethods.closeCookiesForm();
@@ -32,6 +32,7 @@ describe('Check sign up', () => {
         await homePage.fillEmailInput(data.invalidEmail);
         await homePage.clickTryForFreeButton();
         await expect(browser).toHaveUrl('https://telnyx.com/');
+        await expect(signUpPage.getSinUpFormHeading()).not.toBeDisplayed();
     });
 
     it('TC4 - Should check ability to read Privacy Policy information before Sign Up', async function() {   

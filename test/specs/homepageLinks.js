@@ -2,7 +2,7 @@ const commonMethods = require ('../pageObjects/common.methods');
 const homePage = require ('../pageObjects/home.page');
 
 
-describe('Check links on homepage', () => {
+describe('Check links on homepage', function() {
     beforeEach(async function() {
         await browser.url('/');
         await commonMethods.closeCookiesForm();

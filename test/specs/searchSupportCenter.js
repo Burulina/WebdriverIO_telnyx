@@ -3,7 +3,7 @@ const homePage = require ('../pageObjects/home.page');
 const supportCenterPage = require ('../pageObjects/support.center.page');
 const data = require('./../../data/data.js');
 
-describe('Check search in support center', () => {
+describe('Check search in support center', function() {
     beforeEach(async function() {
         await browser.url('/');
         await commonMethods.closeCookiesForm();

@@ -2,7 +2,7 @@ const commonMethods = require ('../pageObjects/common.methods');
 const homePage = require ('../pageObjects/home.page');
 const wirelessPricingPage = require ('../pageObjects/wireless.pricing.page');
 
-describe('Check ability to change country on wireless pricing page', () => {
+describe('Check ability to change country on wireless pricing page', function() {
     before(async function() {
         await browser.url('/');
         await commonMethods.closeCookiesForm();
