@@ -18,8 +18,8 @@ describe('Check CompanyMenuItem functionallity', function() {
         await integrationsPage.getBecomeBetaTesterForm().scrollIntoView();
         await expect (integrationsPage.getBetaTesterFormHeading()).toBeDisplayed();
         await expect (integrationsPage.getBetaTesterFormHeading()).toHaveTextContaining('Become a Beta Tester');
-        await integrationsPage.fillInputs(data.name, data.lastname, data.invalidEmail, data.website, data.company);
-        await integrationsPage.selectUseCaseDropdown('Call Tracking');
+        await integrationsPage.fillInputs(data.name, data.lastname, data.invalidEmail, data.phone, data.company);
+        await integrationsPage.selectPartnerTypeDropdown('Reseller');
         await integrationsPage.clickSubmitButton();
         await expect (integrationsPage.getEmailErrorMessage()).toBeDisplayed();
         await expect (integrationsPage.getEmailErrorMessage()).toHaveTextContaining('Must be valid email');
