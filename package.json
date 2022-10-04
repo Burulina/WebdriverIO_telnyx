@@ -18,6 +18,7 @@
         "allTestsFirefoxHeadless": "cross-env ENV=baseUrl npx wdio run ./conf/wdio.firefox.headless.conf.js",
         "oneTest_ChromeHeadless": "cross-env ENV=baseUrl npx wdio run ./conf/wdio.chrome.headless.conf.js --spec",
         "oneTest_FirefoxHeadless": "cross-env ENV=baseUrl npx wdio run ./conf/wdio.firefox.headless.conf.js --spec",
+        "dockerAllTests": "cross-env ENV=baseUrl npx wdio run ./conf/wdio.docker.conf.js",
         "allure-generate": "npx allure generate ./allure-results --clean",
         "allure-open": "npx allure open"
     }
