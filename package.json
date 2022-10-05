@@ -11,7 +11,8 @@
         "@wdio/spec-reporter": "^7.24.1",
         "chromedriver": "^105.0.1",
         "cross-env": "^7.0.3",
-        "wdio-chromedriver-service": "^7.3.2"
+        "wdio-chromedriver-service": "^7.3.2",
+        "wdio-docker-service": "^3.2.1"
     },
     "scripts": {
         "allTestsChromeHeadless": "cross-env ENV=baseUrl npx wdio run ./conf/wdio.chrome.headless.conf.js",

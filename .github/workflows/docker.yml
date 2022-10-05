@@ -1,58 +1,55 @@
-name: WebdriverIO Telnyx - run in docker
+# name: WebdriverIO Telnyx - run in docker
 
-on:
-  push:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main ]
 
-jobs:
-  tests-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Install Node.js 
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.15.0'
+# jobs:
+#   tests-run:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+#       - name: Install Node.js 
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '16.15.0'
 
-      - name: Run docker compose
-        run: docker-compose -f ./docker-compose.yml up
+#       - name: Run docker compose
+#         run: docker-compose -f ./docker-compose.yml up
 
-      - name: run tests
-        run: npm run dockerAllTests
+#       - name: run tests
+#         run: npm run dockerAllTests
       
-      - name: Upload directory with test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: allure-results
-          retention-days: 20
-      - name: Get Allure history
-        uses: actions/checkout@v3
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-      - name: Get allure report
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        id: allure-report
-        with:
-          allure_results: allure-results
-          gh_pages: gh-pages
-          allure_report: allure-report
-          allure_history: allure-history
-          keep_reports: 20
-      - name: Deploy report to Github Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v3.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: allure-history
-
-      - name: Stop docker
-        run: docker-compose -f ./docker-compose.yml down    
+#       - name: Upload directory with test results
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: allure-results
+#           path: allure-results
+#           retention-days: 20
+#       - name: Get Allure history
+#         uses: actions/checkout@v3
+#         if: always()
+#         continue-on-error: true
+#         with:
+#           ref: gh-pages
+#           path: gh-pages
+#       - name: Get allure report
+#         uses: simple-elf/allure-report-action@master
+#         if: always()
+#         id: allure-report
+#         with:
+#           allure_results: allure-results
+#           gh_pages: gh-pages
+#           allure_report: allure-report
+#           allure_history: allure-history
+#           keep_reports: 20
+#       - name: Deploy report to Github Pages
+#         if: always()
+#         uses: peaceiris/actions-gh-pages@v3.8.0
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_branch: gh-pages
+#           publish_dir: allure-history
         
     

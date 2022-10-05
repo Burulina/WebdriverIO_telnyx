@@ -32,7 +32,24 @@ npm run allTestsFirefoxHeadless
 ``` console
 npm run oneTest_FirefoxHeadless {add spec.name to run}
 ```
-2. To generate and open HTML report after tests execution:
+2. To run tests manually on local machine with docker:
+- open command line an type:
+``` console
+docker-compose -f ./docker-compose.yml up
+```
+- open another command line and type:
+``` console
+npm run dockerAllTests
+```
+To stop docker after test running:
+``` console
+Ctrl + C
+```
+To remove docker after test running:
+``` console
+docker-compose -f ./docker-compose.yml down
+```
+3. To generate and open HTML report after tests execution:
 ``` console
 npm run allure-generate
 ```

@@ -14,12 +14,12 @@ describe('Check CompanyMenuItem functionallity', function() {
         await expect(browser).toHaveUrlContaining('/integrations');
     });
       
-    it('TC17 - Check ability to submit "Beta Tester" form with invalid email', async function() {
+    it.only('TC17 - Check ability to submit "Beta Tester" form with invalid email', async function() {
         await integrationsPage.getBecomeBetaTesterForm().scrollIntoView();
         await expect (integrationsPage.getBetaTesterFormHeading()).toBeDisplayed();
         await expect (integrationsPage.getBetaTesterFormHeading()).toHaveTextContaining('Become a Beta Tester');
-        await integrationsPage.fillInputs(data.name, data.lastname, data.invalidEmail, data.phone, data.company);
-        await integrationsPage.selectPartnerTypeDropdown('Reseller');
+        await integrationsPage.fillInputs(data.name, data.lastname, data.invalidEmail);
+        await integrationsPage.selectPrimaryUseDropdown('Call Tracking');
         await integrationsPage.clickSubmitButton();
         await expect (integrationsPage.getEmailErrorMessage()).toBeDisplayed();
         await expect (integrationsPage.getEmailErrorMessage()).toHaveTextContaining('Must be valid email');

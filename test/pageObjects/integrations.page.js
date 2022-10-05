@@ -6,10 +6,9 @@ const submitButton = 'button[type="submit"]';
 const firstNameInput = '#FirstName';
 const lastNameInput = '#LastName';
 const emailInput  = '#Email';
-const phoneInput = '#Form_Phone__c';
 const companyInput  = '#Company';
 const betaTesterFormHeading = 'section>h3';
-const patnerTypeDropdown = '#Partner_Type__c';
+const primaryUseDropdown = '#Use_Case_Form__c';
 const becomeBetaTesterForm = '#become-a-beta-tester';
 const emailErrorMessage = '#ValidMsgEmail';
 
@@ -27,12 +26,10 @@ class IntegrationsPage {
         return $(emailErrorMessage);
     }
 
-    async fillInputs (firstname, lastname, email, phone, company) {
+    async fillInputs (firstname, lastname, email) {
         await commonMethods.typeInput(firstNameInput, firstname);
         await commonMethods.typeInput(lastNameInput, lastname);
         await commonMethods.typeInput(emailInput, email);
-        await commonMethods.typeInput(phoneInput, phone);
-        await commonMethods.typeInput(companyInput, company);
     }
 
     async clickSubmitButton() {
@@ -43,9 +40,9 @@ class IntegrationsPage {
         await commonMethods.clickElem(exploreMarketButton);
     }
 
-    async selectPartnerTypeDropdown (option) {
-        await $(patnerTypeDropdown).selectByAttribute('value', option);
-    } 
+    async selectPrimaryUseDropdown (option) {
+        await $(primaryUseDropdown).selectByAttribute('value', option);
+    }
 
 }
 
