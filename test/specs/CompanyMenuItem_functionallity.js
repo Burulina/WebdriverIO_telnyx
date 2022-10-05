@@ -14,7 +14,7 @@ describe('Check CompanyMenuItem functionallity', function() {
         await expect(browser).toHaveUrlContaining('/integrations');
     });
       
-    it.only('TC17 - Check ability to submit "Beta Tester" form with invalid email', async function() {
+    it('TC17 - Check ability to submit "Beta Tester" form with invalid email', async function() {
         await integrationsPage.getBecomeBetaTesterForm().scrollIntoView();
         await expect (integrationsPage.getBetaTesterFormHeading()).toBeDisplayed();
         await expect (integrationsPage.getBetaTesterFormHeading()).toHaveTextContaining('Become a Beta Tester');
