@@ -6,7 +6,6 @@ const submitButton = 'button[type="submit"]';
 const firstNameInput = '#FirstName';
 const lastNameInput = '#LastName';
 const emailInput  = '#Email';
-const companyInput  = '#Company';
 const betaTesterFormHeading = 'section>h3';
 const primaryUseDropdown = '#Use_Case_Form__c';
 const becomeBetaTesterForm = '#become-a-beta-tester';
